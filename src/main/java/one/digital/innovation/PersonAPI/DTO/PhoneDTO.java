@@ -1,22 +1,19 @@
-package one.digital.innovation.PersonAPI.entity;
+package one.digital.innovation.PersonAPI.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import one.digital.innovation.PersonAPI.enums.PhoneType;
 
 import javax.persistence.*;
 
-@Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Phone {
+public class PhoneDTO {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -24,5 +21,5 @@ public class Phone {
 
     @Column(nullable = false)
     private String number;
-}
 
+}
