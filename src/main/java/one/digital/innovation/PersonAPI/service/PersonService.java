@@ -4,9 +4,6 @@ import one.digital.innovation.PersonAPI.entity.Person;
 import one.digital.innovation.PersonAPI.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 
 import java.util.List;
 import java.util.Optional;
@@ -17,14 +14,21 @@ public class PersonService {
     @Autowired
     PersonRepository personRepository;
 
-    @GetMapping
     public List<Person> findAll(){
        return personRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Person> findbyId(@PathVariable Long id){
+
+    public Optional<Person> findbyId(Long id){
 
         return personRepository.findById(id);
+    }
+
+    public void save(Person personToSave) {
+        personRepository.save(personToSave);
+    }
+
+    public void updatePerson(Long id, Person personToUpdate) {
+        personRepository.save(personToUpdate);
     }
 }
