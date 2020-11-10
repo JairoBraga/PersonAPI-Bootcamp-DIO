@@ -1,4 +1,4 @@
-package one.digital.innovation.PersonAPI.DTO;
+package one.digital.innovation.PersonAPI.DTO.request;
 
 import lombok.*;
 import one.digital.innovation.PersonAPI.enums.PhoneType;
